@@ -2,11 +2,67 @@
 <items version="2" >
 
     <item
+        jar="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes-4ec2953b2ad0a1f076a8e4cbcba3d9efea486597.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/IjkplayerLib/IjkplayerLib/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="b2fcbf6ce827cf00337ac4af4de1694695b3051b">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-ab25ed06d19e331ee7015e48f5a477e6c3963549.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-java/0.4.5.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="23c5ebc43f662273a5f8fde62c6905253f7ea186">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-df6d591208eb2bfdfbd4a4421427896be1dd7b8d.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.google.android.exoplayer/exoplayer/r1.5.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="068f6603ce77d2f2308d3998a790b9f064cd5dc0">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-3076d64dfc6b3d0760bd61393923976c0689a4cd.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-777f218d96c3b117f80c771259aafcf44997d68e.jar" />
+    </item>
+    <item
         jar="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
         <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes-f4355425c852c2a107fc6be725e38892bebbc125.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-ec9ffdb27066185d660a821e9c4b5f294a0864a5.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/preference-v7/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffdfc8b94e6d46a997ada2edc9a212782d4d321d">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-f674ff61b0a95f4d87613dc3b45ff7854fe7d65f.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/support-annotations-23.2.1-c09742b42db6780a80ad06082653d58bc0122cdd.jar" />
     </item>
     <item
         jar="/Users/zhangyang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
@@ -16,11 +72,46 @@
         <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-17c68de9daecad74dac9816ce79afee5ba6c4f7f.jar" />
     </item>
     <item
-        jar="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jar="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="22.0.1"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes-4ec2953b2ad0a1f076a8e4cbcba3d9efea486597.jar" />
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-05d97a25d9823bc3bd9ec6dcfffcdb0731db4f8f.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-c9dff672906e866a2163de1f91f8213f92716046.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-f84928cf802e4b4086b893e409296ab8ce8c7017.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-exo/0.4.5.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5bcd8da22b3ce28e045a0e149af51a4574ef58ab">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-a8e5050ae50ff8f432f351a1d5e6c5173f584d11.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/classes-f773ea1857ec87d613017f8383c0c8bfb64a47e0.jar" />
+    </item>
+    <item
+        jar="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/zhangyang/IjkplayerLib/sample/build/intermediates/pre-dexed/debug/internal_impl-23.2.1-fd0191c8f86f50524792db307aed85dd5fd22300.jar" />
     </item>
     <item
         jar="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/exploded-aar/ijkplayer/player-java/unspecified/jars/classes.jar"
@@ -28,13 +119,6 @@
         revision="22.0.1"
         sha1="7c381780c6fd2bbfec7a355ae2fa2a4a2df60ac6">
         <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes-0e488d1894fb7d177c8b25f56097bceb039a33fc.jar" />
-    </item>
-    <item
-        jar="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/zhangyang/Documents/ijkplayer-master/android/ijkplayer/sample/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-05d97a25d9823bc3bd9ec6dcfffcdb0731db4f8f.jar" />
     </item>
 
 </items>
