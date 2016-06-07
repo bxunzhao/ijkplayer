@@ -1,1 +1,1 @@
-include ':sample', ':IjkplayerLib'
+include ':sample', ':IjkLib'
