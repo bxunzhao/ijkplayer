@@ -50,6 +50,7 @@ public class PlayerMediaController extends FrameLayout {
     private int sDefaultTimeout = 5000;
     private static final int FADE_OUT = 1;
     private static final int SHOW_PROGRESS = 2;
+    private static final int PROGRESS = 3;
     private final boolean mUseFastForward;
     private boolean mFromXml;
     StringBuilder mFormatBuilder;
@@ -170,6 +171,7 @@ public class PlayerMediaController extends FrameLayout {
 
     public void setMediaPlayer(MediaController.MediaPlayerControl player) {
         mPlayer = player;
+        mHandler.sendEmptyMessage(PROGRESS);
         updatePausePlay();
     }
 
@@ -200,13 +202,7 @@ public class PlayerMediaController extends FrameLayout {
         addView(v, frameParams);
     }
 
-    /**
-     * Create the view that holds the widgets that control playback.
-     * Derived classes can override this to create their own.
-     *
-     * @return The controller view.
-     * @hide This doesn't work as advertised
-     */
+
     protected View makeControllerView() {
         mRoot = LayoutInflater.from(mContext).inflate(getControllerLayoutId(), null);
         initControllerView(mRoot);
@@ -258,13 +254,6 @@ public class PlayerMediaController extends FrameLayout {
             if (mPauseButton != null && !mPlayer.canPause()) {
                 mPauseButton.setEnabled(false);
             }
-            // TODO What we really should do is add a canSeek to the MediaPlayerControl interface;
-            // this scheme can break the case when applications want to allow seek through the
-            // progress bar but disable forward/backward buttons.
-            //
-            // However, currently the flags SEEK_BACKWARD_AVAILABLE, SEEK_FORWARD_AVAILABLE,
-            // and SEEK_AVAILABLE are all (un)set together; as such the aforementioned issue
-            // shouldn't arise in existing applications.
             if (mProgress != null && !mPlayer.canSeekBackward() && !mPlayer.canSeekForward()) {
                 mProgress.setEnabled(false);
             }
@@ -331,9 +320,9 @@ public class PlayerMediaController extends FrameLayout {
     }
 
     private boolean needHide = true;
-    private final Handler mHandler = new Handler() {
+    private final Handler mHandler = new Handler(new Handler.Callback() {
         @Override
-        public void handleMessage(Message msg) {
+        public boolean handleMessage(Message msg) {
             int pos;
             switch (msg.what) {
                 case FADE_OUT:
@@ -343,13 +332,24 @@ public class PlayerMediaController extends FrameLayout {
                 case SHOW_PROGRESS:
                     pos = setProgress();
                     if (!mDragging && mShowing && mPlayer.isPlaying()) {
-                        msg = obtainMessage(SHOW_PROGRESS);
-                        sendMessageDelayed(msg, 1000 - (pos % 1000));
+                        msg = Message.obtain(msg);
+                        mHandler.sendMessageDelayed(msg, 1000 - (pos % 1000));
                     }
                     break;
+                case PROGRESS:
+                    pos = mPlayer.getCurrentPosition();
+                    posCallBack(pos);
+                    msg = Message.obtain(msg);
+                    mHandler.sendMessageDelayed(msg, 2000);
+                    break;
             }
+            return false;
         }
-    };
+    });
+
+    protected void posCallBack(int position) {
+
+    }
 
     public void setNeedHide(boolean needHide) {
         this.needHide = needHide;
@@ -488,7 +488,7 @@ public class PlayerMediaController extends FrameLayout {
         }
     }
 
-    private void doPauseResume() {
+    protected void doPauseResume() {
         if (mPlayer.isPlaying()) {
             mPlayer.pause();
         } else {
