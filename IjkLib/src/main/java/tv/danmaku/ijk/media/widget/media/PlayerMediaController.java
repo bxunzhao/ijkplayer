@@ -338,7 +338,9 @@ public class PlayerMediaController extends FrameLayout {
                     break;
                 case PROGRESS:
                     pos = mPlayer.getCurrentPosition();
-                    posCallBack(pos);
+                    if (mPlayer.isPlaying()) {
+                        posCallBack(pos);
+                    }
                     msg = Message.obtain(msg);
                     mHandler.sendMessageDelayed(msg, 2000);
                     break;
@@ -348,7 +350,6 @@ public class PlayerMediaController extends FrameLayout {
     });
 
     protected void posCallBack(int position) {
-
     }
 
     public void setNeedHide(boolean needHide) {
