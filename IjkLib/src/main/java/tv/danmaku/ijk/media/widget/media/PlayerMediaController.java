@@ -411,13 +411,11 @@ public class PlayerMediaController extends FrameLayout {
                 ((Activity) getContext()).finish();
                 return true;
             }
-            if (uniqueDown) {
+            if (isShowing()) {
                 hide();
+                return true;
             }
-            return true;
         }
-
-        show(sDefaultTimeout);
         return super.dispatchKeyEvent(event);
     }
 
