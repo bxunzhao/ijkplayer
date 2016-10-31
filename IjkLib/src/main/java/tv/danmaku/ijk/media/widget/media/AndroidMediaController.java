@@ -22,6 +22,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
@@ -72,6 +73,8 @@ public class AndroidMediaController extends PlayerMediaController implements IMe
         mShowOnceArray.clear();
     }
 
+
+
     //----------
     // Extends
     //----------
@@ -84,7 +87,7 @@ public class AndroidMediaController extends PlayerMediaController implements IMe
     }
 
     @Override
-    public void setAnchorView(View view) {
+    public void setAnchorView(ViewGroup view) {
         super.setAnchorView(view);
     }
 

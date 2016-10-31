@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
         setContentView(R.layout.activity_main);
-
         IjkMediaPlayer.loadLibrariesOnce(null);
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
         videoView = (IjkVideoView) findViewById(R.id.ijkPlayer);
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         //  videoView.setOnErrorListener(new ErrorListener());
         AndroidMediaController controller = new AndroidMediaController(this, false);
         videoView.setMediaController(controller);
-        String url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear3/prog_index.m3u8";
+        String url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8";
         videoView.setVideoURI(Uri.parse(url));
         videoView.start();
     }
@@ -36,6 +35,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         videoView.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        IjkMediaPlayer.native_profileEnd();
     }
 
     @Override

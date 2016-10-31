@@ -17,6 +17,7 @@
 package tv.danmaku.ijk.media.widget.media;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.MediaController;
 
 public interface IMediaController {
@@ -24,7 +25,7 @@ public interface IMediaController {
 
     boolean isShowing();
 
-    void setAnchorView(View view);
+    void setAnchorView(ViewGroup view);
 
     void setEnabled(boolean enabled);
 

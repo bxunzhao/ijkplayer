@@ -32,6 +32,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.MediaController;
 import android.widget.TableLayout;
@@ -351,8 +352,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
 
     private void attachMediaController() {
         if (mMediaPlayer != null && mMediaController != null) {
-            View anchorView = this.getParent() instanceof View ?
-                    (View) this.getParent() : this;
+            ViewGroup anchorView = this;
             mMediaController.setAnchorView(anchorView);
             mMediaController.setMediaPlayer(this);
             mMediaController.setEnabled(isInPlaybackState());

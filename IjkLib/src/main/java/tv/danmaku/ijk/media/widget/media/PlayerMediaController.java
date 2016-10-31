@@ -1,23 +1,17 @@
 package tv.danmaku.ijk.media.widget.media;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.PixelFormat;
-import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.MediaController;
@@ -37,12 +31,8 @@ public class PlayerMediaController extends FrameLayout {
 
     private MediaController.MediaPlayerControl mPlayer;
     private final Context mContext;
-    private View mAnchor;
+    private ViewGroup mAnchor;
     private View mRoot;
-    private WindowManager mWindowManager;
-    private Window mWindow;
-    private View mDecor;
-    private WindowManager.LayoutParams mDecorLayoutParams;
     protected ProgressBar mProgress;
     protected TextView mEndTime, mCurrentTime;
     private boolean mShowing;
@@ -79,7 +69,6 @@ public class PlayerMediaController extends FrameLayout {
         super(context);
         mContext = context;
         mUseFastForward = useFastForward;
-        initFloatingWindowLayout();
         initFloatingWindow();
     }
 
@@ -88,43 +77,14 @@ public class PlayerMediaController extends FrameLayout {
     }
 
     private void initFloatingWindow() {
-        mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
-        Dialog dialog = new Dialog(mContext);
-        mWindow = dialog.getWindow();
-        mWindow.setWindowManager(mWindowManager, null, null);
-        mWindow.requestFeature(Window.FEATURE_NO_TITLE);
-        mDecor = mWindow.getDecorView();
-        mDecor.setOnTouchListener(mTouchListener);
-        mWindow.setContentView(this);
-        mWindow.setBackgroundDrawableResource(android.R.color.transparent);
-
-        // While the media controller is up, the volume control keys should
-        // affect the media stream type
-        mWindow.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-
+        //setOnTouchListener(mTouchListener);
         setFocusable(true);
         setFocusableInTouchMode(true);
         setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
         requestFocus();
     }
 
-    // Allocate and initialize the static parts of mDecorLayoutParams. Must
-    // also call updateFloatingWindowLayout() to fill in the dynamic parts
-    // (y and width) before mDecorLayoutParams can be used.
-    private void initFloatingWindowLayout() {
-        mDecorLayoutParams = new WindowManager.LayoutParams();
-        WindowManager.LayoutParams p = mDecorLayoutParams;
-        p.gravity = Gravity.TOP | Gravity.LEFT;
-        p.height = LayoutParams.WRAP_CONTENT;
-        p.x = 0;
-        p.format = PixelFormat.TRANSLUCENT;
-        p.type = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
-        p.flags |= WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM
-                | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
-                | WindowManager.LayoutParams.FLAG_SPLIT_TOUCH;
-        p.token = null;
-        p.windowAnimations = 0; // android.R.style.DropDownAnimationDown;
-    }
+
 
     // Update the dynamic parts of mDecorLayoutParams
     // Must be called with mAnchor != NULL.
@@ -134,13 +94,6 @@ public class PlayerMediaController extends FrameLayout {
 
         // we need to know the size of the controller so we can properly position it
         // within its space
-        mDecor.measure(MeasureSpec.makeMeasureSpec(mAnchor.getWidth(), MeasureSpec.AT_MOST),
-                MeasureSpec.makeMeasureSpec(mAnchor.getHeight(), MeasureSpec.AT_MOST));
-
-        WindowManager.LayoutParams p = mDecorLayoutParams;
-        p.width = mAnchor.getWidth();
-        p.x = anchorPos[0] + (mAnchor.getWidth() - p.width) / 2;
-        p.y = anchorPos[1] + mAnchor.getHeight() - mDecor.getMeasuredHeight();
     }
 
     // This is called whenever mAnchor's layout bound changes
@@ -152,12 +105,12 @@ public class PlayerMediaController extends FrameLayout {
                                            int oldBottom) {
                     updateFloatingWindowLayout();
                     if (mShowing) {
-                        mWindowManager.updateViewLayout(mDecor, mDecorLayoutParams);
+                        //mWindowManager.updateViewLayout(mDecor, mDecorLayoutParams);
                     }
                 }
             };
 
-    private final OnTouchListener mTouchListener = new OnTouchListener() {
+/*    private final OnTouchListener mTouchListener = new OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -167,7 +120,7 @@ public class PlayerMediaController extends FrameLayout {
             }
             return false;
         }
-    };
+    };*/
 
     public void setMediaPlayer(MediaController.MediaPlayerControl player) {
         mPlayer = player;
@@ -183,7 +136,7 @@ public class PlayerMediaController extends FrameLayout {
      *
      * @param view The view to which to anchor the controller when it is visible.
      */
-    public void setAnchorView(View view) {
+    public void setAnchorView(ViewGroup view) {
         if (mAnchor != null) {
             mAnchor.removeOnLayoutChangeListener(mLayoutChangeListener);
         }
@@ -191,15 +144,12 @@ public class PlayerMediaController extends FrameLayout {
         if (mAnchor != null) {
             mAnchor.addOnLayoutChangeListener(mLayoutChangeListener);
         }
-
-        LayoutParams frameParams = new LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-
         removeAllViews();
         View v = makeControllerView();
-        addView(v, frameParams);
+        addView(v, ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+        mAnchor.addView(this, ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
     }
 
 
@@ -280,7 +230,7 @@ public class PlayerMediaController extends FrameLayout {
             }
             disableUnsupportedButtons();
             updateFloatingWindowLayout();
-            mWindowManager.addView(mDecor, mDecorLayoutParams);
+            mRoot.setVisibility(View.VISIBLE);
             mShowing = true;
         }
         updatePausePlay();
@@ -311,7 +261,7 @@ public class PlayerMediaController extends FrameLayout {
         if (mShowing) {
             try {
                 mHandler.removeMessages(SHOW_PROGRESS);
-                mWindowManager.removeView(mDecor);
+                mRoot.setVisibility(View.GONE);
             } catch (IllegalArgumentException ex) {
                 Log.w("MediaController", "already removed");
             }
@@ -399,13 +349,13 @@ public class PlayerMediaController extends FrameLayout {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                show(0); // show until hide is called
                 break;
             case MotionEvent.ACTION_UP:
-                show(sDefaultTimeout); // start timeout
-                break;
-            case MotionEvent.ACTION_CANCEL:
-                hide();
+                if (!isShowing()) {
+                    show(sDefaultTimeout); // show until hide is called
+                } else {
+                    hide();
+                }
                 break;
             default:
                 break;
