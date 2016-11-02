@@ -1,13 +1,15 @@
 # ijkplayer
 基于bilibili开源播放器编译好的so包项目，可直接通过lib的方式进行引用。
 
-优化了下control的实现方式,从dialog替换成view的显示隐藏.
+优化了下control的实现方式,从dialog替换成view的显示隐藏.增加播放器支持的播放类型,明显增加了so包大小.
+
+请注意优化.
 
 ## Usage
 Add this line to your `build.gradle` file under your module directory. 
 
 ```
-    compile 'com.github.leifzhang:IjkLib:0.2.0'
+    compile 'com.github.leifzhang:IjkLib:0.2.1'
 ```
 # 简介
 更新了一下ijk的版本号以及升级了一下so包.

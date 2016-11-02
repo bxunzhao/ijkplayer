@@ -150,6 +150,7 @@ public class PlayerMediaController extends FrameLayout {
                 ViewGroup.LayoutParams.MATCH_PARENT);
         mAnchor.addView(this, ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
+        v.setVisibility(View.INVISIBLE);
     }
 
 
