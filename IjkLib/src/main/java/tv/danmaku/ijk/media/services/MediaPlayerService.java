@@ -59,4 +59,5 @@ public class MediaPlayerService extends Service {
     public static IMediaPlayer getMediaPlayer() {
         return sMediaPlayer;
     }
+
 }

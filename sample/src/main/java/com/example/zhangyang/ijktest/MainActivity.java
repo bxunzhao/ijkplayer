@@ -26,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
         //  videoView.setOnErrorListener(new ErrorListener());
         AndroidMediaController controller = new AndroidMediaController(this, false);
         videoView.setMediaController(controller);
-        //String url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8";
-        String url = "http://o6wf52jln.bkt.clouddn.com/演员.mp3";
+        String url = "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/bipbop_4x3_variant.m3u8";
+        // String url = "http://o6wf52jln.bkt.clouddn.com/演员.mp3";
         videoView.setVideoURI(Uri.parse(url));
         videoView.start();
+        videoView.setVideoURI(Uri.parse(url));
     }
 
     @Override

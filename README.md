@@ -9,7 +9,7 @@
 Add this line to your `build.gradle` file under your module directory. 
 
 ```
-    compile 'com.github.leifzhang:IjkLib:0.2.1'
+    compile 'com.github.leifzhang:IjkLib:0.2.4'
 ```
 # 简介
 更新了一下ijk的版本号以及升级了一下so包.

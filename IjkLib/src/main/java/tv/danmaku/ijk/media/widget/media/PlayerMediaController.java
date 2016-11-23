@@ -110,17 +110,6 @@ public class PlayerMediaController extends FrameLayout {
                 }
             };
 
-/*    private final OnTouchListener mTouchListener = new OnTouchListener() {
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                if (mShowing) {
-                    hide();
-                }
-            }
-            return false;
-        }
-    };*/
 
     public void setMediaPlayer(MediaController.MediaPlayerControl player) {
         mPlayer = player;
@@ -148,6 +137,7 @@ public class PlayerMediaController extends FrameLayout {
         View v = makeControllerView();
         addView(v, ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
+        mAnchor.removeView(this);
         mAnchor.addView(this, ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
         v.setVisibility(View.INVISIBLE);

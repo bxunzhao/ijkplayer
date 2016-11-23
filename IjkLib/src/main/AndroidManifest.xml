@@ -4,7 +4,7 @@
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
-
+        <service android:name="tv.danmaku.ijk.media.services.MediaPlayerService" />
     </application>
 
 </manifest>

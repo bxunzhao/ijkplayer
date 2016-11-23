@@ -18,7 +18,9 @@ package tv.danmaku.ijk.media.widget.media;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -117,31 +119,32 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
 
     public IjkVideoView(Context context) {
         super(context);
-        initVideoView(context);
+        initVideoView(context, null);
     }
 
     public IjkVideoView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initVideoView(context);
+        initVideoView(context, attrs);
     }
 
     public IjkVideoView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initVideoView(context);
+        initVideoView(context, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public IjkVideoView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        initVideoView(context);
+        initVideoView(context, attrs);
     }
 
-    // REMOVED: onMeasure
-    // REMOVED: onInitializeAccessibilityEvent
-    // REMOVED: onInitializeAccessibilityNodeInfo
-    // REMOVED: resolveAdjustedSize
-
-    private void initVideoView(Context context) {
+    private void initVideoView(Context context, AttributeSet attrs) {
+        TypedArray arr = getContext().obtainStyledAttributes(attrs,
+                R.styleable.IjkVideoView, 0, 0);
+        if (arr != null) {
+            mEnableBackgroundPlay = arr.getBoolean(R.styleable.IjkVideoView_enableBackground, false);
+            arr.recycle();
+        }
         mAppContext = context.getApplicationContext();
         mSettings = new Settings(mAppContext);
 
@@ -526,31 +529,35 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
                         } else {
                             messageId = R.string.VideoView_error_text_unknown;
                         }
-
-           /*             new AlertDialog.Builder(getContext())
+                        new AlertDialog.Builder(getContext())
                                 .setMessage(messageId)
                                 .setPositiveButton(R.string.VideoView_error_button,
                                         new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int whichButton) {
-                                            *//* If we get here, there is no onError listener, so
-                                             * at least inform them that the video is over.
-                                             *//*
                                                 if (mOnCompletionListener != null) {
                                                     mOnCompletionListener.onCompletion(mMediaPlayer);
                                                 }
                                             }
                                         })
                                 .setCancelable(false)
-                                .show();*/
+                                .show();
                     }
                     return true;
                 }
             };
+    private IMediaPlayer.OnBufferingUpdateListener bufferingUpdateListener;
+
+    public void setBufferingUpdateListener(IMediaPlayer.OnBufferingUpdateListener bufferingUpdateListener) {
+        this.bufferingUpdateListener = bufferingUpdateListener;
+    }
 
     private IMediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener =
             new IMediaPlayer.OnBufferingUpdateListener() {
                 public void onBufferingUpdate(IMediaPlayer mp, int percent) {
                     mCurrentBufferPercentage = percent;
+                    if (bufferingUpdateListener != null) {
+                        bufferingUpdateListener.onBufferingUpdate(mp, percent);
+                    }
                 }
             };
 
@@ -635,7 +642,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
                 Log.e(TAG, "onSurfaceCreated: unmatched render callback\n");
                 return;
             }
-
             mSurfaceHolder = holder;
             if (mMediaPlayer != null)
                 bindSurfaceHolder(mMediaPlayer, holder);
@@ -858,11 +864,11 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
             IRenderView.AR_ASPECT_FIT_PARENT,
             IRenderView.AR_ASPECT_FILL_PARENT,
             IRenderView.AR_ASPECT_WRAP_CONTENT,
-            // IRenderView.AR_MATCH_PARENT,
+            IRenderView.AR_MATCH_PARENT,
             IRenderView.AR_16_9_FIT_PARENT,
             IRenderView.AR_4_3_FIT_PARENT};
     private int mCurrentAspectRatioIndex = 0;
-    private int mCurrentAspectRatio = s_allAspectRatio[1];
+    private int mCurrentAspectRatio = s_allAspectRatio[0];
 
     public int toggleAspectRatio() {
         mCurrentAspectRatioIndex++;
@@ -875,7 +881,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     }
 
     public void changeAspectRaito() {
-        mRenderView.setAspectRatio(s_allAspectRatio[1]);
+        mRenderView.setAspectRatio(s_allAspectRatio[0]);
     }
 
     //-------------------------
@@ -1037,13 +1043,17 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     private boolean mEnableBackgroundPlay = false;
 
     private void initBackground() {
-        mEnableBackgroundPlay = mSettings.getEnableBackgroundPlay();
         if (mEnableBackgroundPlay) {
             MediaPlayerService.intentToStart(getContext());
             mMediaPlayer = MediaPlayerService.getMediaPlayer();
-            if (mHudViewHolder != null)
+            if (mHudViewHolder != null) {
                 mHudViewHolder.setMediaPlayer(mMediaPlayer);
+            }
         }
+    }
+
+    public void setEnableBackgroundPlay(boolean mEnableBackgroundPlay) {
+        this.mEnableBackgroundPlay = mEnableBackgroundPlay;
     }
 
     public boolean isBackgroundPlayEnabled() {
