@@ -1,2 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.1_2e1949940d463e351fdb8e81ed494b093e974b47/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.1_b1dc9aaf2bd699028b4e9ccc3ca5691e542e5c63/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="98d830fd49a44ac917cec44f0b5602df145b1465">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_007dbccea4c7be6c2c32b9693ebf4c3263960e4c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4ea5c5278c91f4640f679b69d10216a041f91150">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d5d70d2b2852178a2f8bd822f93102d59691d604/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/preference-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ffdfc8b94e6d46a997ada2edc9a212782d4d321d">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-preference-v7-23.2.1_258c68cb40cf2956fca48ed1d5d01672e0075339/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e3885783ff8926ed9e2fdcd16816c2e1e73e7aee">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.2.1_58cb382d1e1f331983fb0a0baa3204bf2e843d7e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.2.1_cca832953db83dc586abd441f340db79ac35d8ae/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-java/0.7.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="2c4c6b4050581aaf0d4b7dce87859e946a4a369b">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/tv.danmaku.ijk.media-ijkplayer-java-0.7.5_37cad960006e5d7743b3881a62f20d828e233d3a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="673d77a5bbddd766037f088e775df525c46407f0">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.1_afd7aeec44cb19166a59a63f5e206e9d0fdb8acc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/tv.danmaku.ijk.media/ijkplayer-exo/0.7.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8af48bc8fee42f0b2b012c384937326979695288">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/tv.danmaku.ijk.media-ijkplayer-exo-0.7.5_033f838379c387fbb09668cd85f27b05e6db6b07/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/jars/libs/internal_impl-23.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_45adaea8fe7bc276ac703817f0a751a3eb8256c1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/exploded-aar/com.google.android.exoplayer/exoplayer/r1.5.11/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0a919fdfb7808ff27b33e6e84ec990478abc9cf1">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.exoplayer-exoplayer-r1.5.11_30683ae0cdb881097b18b48c3bcba71d673e0d34/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zhangyang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_c09742b42db6780a80ad06082653d58bc0122cdd/classes.dex" />
+    </item>
+
+</items>
