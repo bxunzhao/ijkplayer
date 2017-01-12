@@ -11,7 +11,7 @@
 Add this line to your `build.gradle` file under your module directory. 
 
 ```
-    compile 'com.github.leifzhang:IjkLib:0.3.0'
+    compile 'com.github.leifzhang:IjkLib:0.3.1'
 ```
 # 简介
 更新了一下ijk的版本号以及升级了一下so包.

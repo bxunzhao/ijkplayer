@@ -234,6 +234,18 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         return 0;
     }
 
+    public boolean isBackgroundPlayEnabled() {
+        return mEnableBackgroundPlay;
+    }
+
+    public void enterBackground() {
+        MediaPlayerService.setMediaPlayer(mMediaPlayer);
+    }
+
+    public void stopBackgroundPlay() {
+        MediaPlayerService.setMediaPlayer(null);
+    }
+
     private static final int STATE_ERROR = -1;
     private static final int STATE_IDLE = 0;
     private static final int STATE_PREPARING = 1;
@@ -767,4 +779,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         this.bufferingUpdateListener = bufferingUpdateListener;
     }
 
+    public IMediaPlayer getMediaPlayer() {
+        return mMediaPlayer;
+    }
 }
