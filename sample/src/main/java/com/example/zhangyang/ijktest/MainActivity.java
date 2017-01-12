@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.widget.media.AndroidMediaController;
-import tv.danmaku.ijk.media.widget.media.VideoView;
+import tv.danmaku.ijk.media.widget.media.IjkVideoView;
 
 public class MainActivity extends AppCompatActivity {
-    VideoView videoView;
+    IjkVideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         IjkMediaPlayer.loadLibrariesOnce(null);
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
-        videoView = (VideoView) findViewById(R.id.ijkPlayer);
+        videoView = (IjkVideoView) findViewById(R.id.ijkPlayer);
         //  videoView.setBackgroundColor(Color.parseColor("#F6F6F6"));
         //  videoView.setOnErrorListener(new ErrorListener());
         AndroidMediaController controller = new AndroidMediaController(this, false);

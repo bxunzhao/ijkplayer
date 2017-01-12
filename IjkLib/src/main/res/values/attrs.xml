@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="entrySummaries" format="reference" />
     <declare-styleable name="IjkVideoView">
         <attr name="enableBackground" format="boolean" />
-    </declare-styleable>
-    <declare-styleable name="IjkListPreference">
-        <attr name="entrySummaries" />
+        <attr name="aspectRatio" format="integer" />
     </declare-styleable>
 </resources>

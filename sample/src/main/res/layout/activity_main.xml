@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.zhangyang.ijktest.MainActivity">
 
-    <tv.danmaku.ijk.media.widget.media.VideoView
+    <tv.danmaku.ijk.media.widget.media.IjkVideoView
         android:id="@+id/ijkPlayer"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
