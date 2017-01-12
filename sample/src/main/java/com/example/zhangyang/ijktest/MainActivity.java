@@ -7,10 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.widget.media.AndroidMediaController;
-import tv.danmaku.ijk.media.widget.media.IjkVideoView;
+import tv.danmaku.ijk.media.widget.media.VideoView;
 
 public class MainActivity extends AppCompatActivity {
-    IjkVideoView videoView;
+    VideoView videoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         IjkMediaPlayer.loadLibrariesOnce(null);
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
-        videoView = (IjkVideoView) findViewById(R.id.ijkPlayer);
+        videoView = (VideoView) findViewById(R.id.ijkPlayer);
         //  videoView.setBackgroundColor(Color.parseColor("#F6F6F6"));
         //  videoView.setOnErrorListener(new ErrorListener());
         AndroidMediaController controller = new AndroidMediaController(this, false);
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         // String url = "http://o6wf52jln.bkt.clouddn.com/演员.mp3";
         videoView.setVideoURI(Uri.parse(url));
         videoView.start();
-        videoView.setVideoURI(Uri.parse(url));
     }
 
     @Override

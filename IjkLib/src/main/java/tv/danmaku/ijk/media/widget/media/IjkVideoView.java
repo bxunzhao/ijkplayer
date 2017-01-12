@@ -57,6 +57,8 @@ import tv.danmaku.ijk.media.playerLib.R;
 import tv.danmaku.ijk.media.services.MediaPlayerService;
 import tv.danmaku.ijk.media.widget.Settings;
 
+import static tv.danmaku.ijk.media.widget.Settings.PV_PLAYER__IjkMediaPlayer;
+
 
 public class IjkVideoView extends FrameLayout implements MediaController.MediaPlayerControl {
     private String TAG = "IjkVideoView";
@@ -279,6 +281,12 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
             AudioManager am = (AudioManager) mAppContext.getSystemService(Context.AUDIO_SERVICE);
             am.abandonAudioFocus(null);
         }
+    }
+
+    private int mSettingPlayer = PV_PLAYER__IjkMediaPlayer;
+
+    public void setSettingPlayer(int mSettingPlayer) {
+        this.mSettingPlayer = mSettingPlayer;
     }
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -687,6 +695,29 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         }
     }
 
+    public IMediaPlayer getMediaPlayer() {
+        return mMediaPlayer;
+    }
+
+    public void setMediaPlayer(IMediaPlayer mMediaPlayer) {
+        this.mMediaPlayer = mMediaPlayer;
+        AudioManager am = (AudioManager) mAppContext.getSystemService(Context.AUDIO_SERVICE);
+        am.requestAudioFocus(null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
+        attachMediaController();
+        this.mMediaPlayer.setOnPreparedListener(mPreparedListener);
+        this.mMediaPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
+        this.mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        this.mMediaPlayer.setOnErrorListener(mErrorListener);
+        this.mMediaPlayer.setOnInfoListener(mInfoListener);
+        this.mMediaPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
+        if (mHudViewHolder != null) {
+            mHudViewHolder.setMediaPlayer(mMediaPlayer);
+        }
+        bindSurfaceHolder(mMediaPlayer, mSurfaceHolder);
+        this.mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+        this.mMediaPlayer.setScreenOnWhilePlaying(true);
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
         if (isInPlaybackState() && mMediaController != null) {
@@ -847,18 +878,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         return 0;
     }
 
-    // REMOVED: getAudioSessionId();
-    // REMOVED: onAttachedToWindow();
-    // REMOVED: onDetachedFromWindow();
-    // REMOVED: onLayout();
-    // REMOVED: draw();
-    // REMOVED: measureAndLayoutSubtitleWidget();
-    // REMOVED: setSubtitleWidget();
-    // REMOVED: getSubtitleLooper();
-
-    //-------------------------
-    // Extend: Aspect Ratio
-    //-------------------------
 
     private static final int[] s_allAspectRatio = {
             IRenderView.AR_ASPECT_FIT_PARENT,
@@ -873,11 +892,17 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     public int toggleAspectRatio() {
         mCurrentAspectRatioIndex++;
         mCurrentAspectRatioIndex %= s_allAspectRatio.length;
-
         mCurrentAspectRatio = s_allAspectRatio[mCurrentAspectRatioIndex];
-        if (mRenderView != null)
+        if (mRenderView != null) {
             mRenderView.setAspectRatio(mCurrentAspectRatio);
+        }
         return mCurrentAspectRatio;
+    }
+
+    public void setAspectRatio(int render) {
+        if (mRenderView != null) {
+            mRenderView.setAspectRatio(mCurrentAspectRatio);
+        }
     }
 
     public void changeAspectRaito() {
@@ -911,15 +936,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         setRender(mCurrentRender);
     }
 
-    public int toggleRender() {
-        mCurrentRenderIndex++;
-        mCurrentRenderIndex %= mAllRenders.size();
-
-        mCurrentRender = mAllRenders.get(mCurrentRenderIndex);
-        setRender(mCurrentRender);
-        return mCurrentRender;
-    }
-
     @NonNull
     public static String getRenderText(Context context, int render) {
         String text;
@@ -940,18 +956,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         return text;
     }
 
-    //-------------------------
-    // Extend: Player
-    //-------------------------
-    public int togglePlayer() {
-        if (mMediaPlayer != null)
-            mMediaPlayer.release();
-
-        if (mRenderView != null)
-            mRenderView.getView().invalidate();
-        openVideo();
-        return mSettings.getPlayer();
-    }
 
     @NonNull
     public static String getPlayerText(Context context, int player) {
@@ -960,7 +964,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
             case Settings.PV_PLAYER__AndroidMediaPlayer:
                 text = context.getString(R.string.VideoView_player_AndroidMediaPlayer);
                 break;
-            case Settings.PV_PLAYER__IjkMediaPlayer:
+            case PV_PLAYER__IjkMediaPlayer:
                 text = context.getString(R.string.VideoView_player_IjkMediaPlayer);
                 break;
             case Settings.PV_PLAYER__IjkExoMediaPlayer:
@@ -987,7 +991,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
                 mediaPlayer = androidMediaPlayer;
             }
             break;
-            case Settings.PV_PLAYER__IjkMediaPlayer:
+            case PV_PLAYER__IjkMediaPlayer:
             default: {
                 IjkMediaPlayer ijkMediaPlayer = null;
                 if (mUri != null) {
