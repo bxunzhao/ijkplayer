@@ -2,94 +2,76 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/zhangyang/.android/build-cache/caeec26b81888dc1b21f5b833338f5b93371e7e5/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="673d77a5bbddd766037f088e775df525c46407f0">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9fb58b74a53c7ed8ec3a79efad0bed8dbafb61e3/classes.dex" />
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes_9fb58b74a53c7ed8ec3a79efad0bed8dbafb61e3.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_007dbccea4c7be6c2c32b9693ebf4c3263960e4c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/zhangyang/.android/build-cache/5629896d653a8b533a71ba22a5ae17a1d8248bbe/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/classes_388319ef2f48d6f647307a242004db733ece02c1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/zhangyang/.android/build-cache/3c31211ca09f2c21330c6d0afe3422791ef40328/output/jars/libs/internal_impl-23.2.1.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="607a3d0b8013b4ccbfeb0b7cb293351994e021fb">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.1_f052a73be1dabb65292c09613cb776e9ddd0cca1/classes.dex" />
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/internal_impl-23.2.1_f052a73be1dabb65292c09613cb776e9ddd0cca1.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/.android/build-cache/3c31211ca09f2c21330c6d0afe3422791ef40328/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6f1cd6d8d42dab226faec015d5851d8e1c677de1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/zhangyang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_c09742b42db6780a80ad06082653d58bc0122cdd/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="25d9d6081d4a6a3dfca35b2f6e4839940962d274">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d5d70d2b2852178a2f8bd822f93102d59691d604/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/zhangyang/.android/build-cache/c6fe5b26005a72f1cf22834e957c4b16c14abb30/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="148f0b9616e7e7e3504a482d700c478c295eb93b">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/classes_60da9090266d2aebe411d0f9abcd2e7a75063da5/classes.dex" />
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes_60da9090266d2aebe411d0f9abcd2e7a75063da5.jar" />
     </item>
     <item
-        is-multidex="true"
+        is-multidex="false"
         jar="/Users/zhangyang/.android/build-cache/2300f3675e9a9cd1ed6207725038a41e5336ab45/output/jars/classes.jar"
-        jumboMode="true"
+        jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="e4d0cbb0b999604b349062f0214a0a228a7fd151">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1bc1bbd9d6357093e24acd85f5807be8c682bc44/classes.dex" />
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes_1bc1bbd9d6357093e24acd85f5807be8c682bc44.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/zhangyang/.android/build-cache/5629896d653a8b533a71ba22a5ae17a1d8248bbe/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
-        revision="23.0.2"
+        revision="25.0.0"
+        sha1="3469cb457f10f74c28cbc05f069b6c894f6cbdd0">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes_388319ef2f48d6f647307a242004db733ece02c1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/ijkplayer/IjkLib/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6cb0ad2877a98d37b6e12dcd71adb4a5da8e4260">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes_99b625949b7bcdc3f44f2d4b4f2268eb499dd165.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.android/build-cache/3c31211ca09f2c21330c6d0afe3422791ef40328/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3be474b1b21b31cf2fa93fe6bd641ae108d96452">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/classes_6f1cd6d8d42dab226faec015d5851d8e1c677de1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.2.1/support-annotations-23.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
         sha1="ccb693bc0774fcb637246f7360de25b4af7df318">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.1_c09742b42db6780a80ad06082653d58bc0122cdd/classes.dex" />
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/pre-dexed/debug/support-annotations-23.2.1_c09742b42db6780a80ad06082653d58bc0122cdd.jar" />
     </item>
 
 </items>

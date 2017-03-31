@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.MediaController;
-import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -33,7 +32,7 @@ public class PlayerMediaController extends FrameLayout {
     private final Context mContext;
     private ViewGroup mAnchor;
     private View mRoot;
-    protected ProgressBar mProgress;
+    protected SeekBar mProgress;
     protected TextView mEndTime, mCurrentTime;
     private boolean mShowing;
     private boolean mDragging;
@@ -162,7 +161,7 @@ public class PlayerMediaController extends FrameLayout {
         }
 
 
-        mProgress = (ProgressBar) v.findViewById(R.id.mediacontroller_seekbar);
+        mProgress = (SeekBar) v.findViewById(R.id.mediacontroller_seekbar);
         if (mProgress != null) {
             if (mProgress instanceof SeekBar) {
                 SeekBar seeker = (SeekBar) mProgress;
