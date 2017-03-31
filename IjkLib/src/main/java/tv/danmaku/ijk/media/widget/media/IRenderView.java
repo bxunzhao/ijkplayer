@@ -65,7 +65,7 @@ public interface IRenderView {
         SurfaceTexture getSurfaceTexture();
     }
 
-    public interface IRenderCallback {
+    interface IRenderCallback {
         /**
          * @param holder
          * @param width  could be 0

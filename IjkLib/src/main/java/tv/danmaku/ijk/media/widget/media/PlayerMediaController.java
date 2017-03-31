@@ -451,6 +451,9 @@ public class PlayerMediaController extends FrameLayout {
     private final SeekBar.OnSeekBarChangeListener mSeekListener = new SeekBar.OnSeekBarChangeListener() {
         @Override
         public void onStartTrackingTouch(SeekBar bar) {
+            if (mPlayer.isPlaying()) {
+                mPlayer.pause();
+            }
             show(3600000);
 
             mDragging = true;
@@ -481,6 +484,7 @@ public class PlayerMediaController extends FrameLayout {
             long duration = mPlayer.getDuration();
             long newposition = (duration * bar.getProgress()) / 1000L;
             mPlayer.seekTo((int) newposition);
+            mPlayer.start();
             mDragging = false;
             setProgress();
             updatePausePlay();

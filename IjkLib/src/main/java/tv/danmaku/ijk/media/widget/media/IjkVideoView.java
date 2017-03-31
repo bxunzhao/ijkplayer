@@ -3,7 +3,6 @@ package tv.danmaku.ijk.media.widget.media;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -26,9 +25,6 @@ import java.util.Map;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 import tv.danmaku.ijk.media.playerLib.R;
-import tv.danmaku.ijk.media.services.MediaPlayerService;
-
-import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
 
 /**
  * Created by Leif Zhang on 2017/1/12.
@@ -36,6 +32,8 @@ import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
  */
 
 public class IjkVideoView extends FrameLayout implements MediaController.MediaPlayerControl {
+    private static String TAG = "IjkVideoView";
+
     public IjkVideoView(Context context) {
         super(context);
         init(context, null);
@@ -53,7 +51,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
 
     private boolean mEnableBackgroundPlay = false;
     private IRenderView.ISurfaceHolder mSurfaceHolder = null;
-    private IMediaPlayer mMediaPlayer = null;
+    protected IMediaPlayer mMediaPlayer = null;
     private IRenderView mRenderView;
     private static final int[] s_allAspectRatio = {
             IRenderView.AR_ASPECT_FIT_PARENT,
@@ -71,17 +69,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     private boolean mCanSeekForward = true;
 
     private void init(Context context, AttributeSet attrs) {
-        TypedArray arr = getContext().obtainStyledAttributes(attrs,
-                R.styleable.IjkVideoView, 0, 0);
-        if (arr != null) {
-            mEnableBackgroundPlay = arr.getBoolean(R.styleable.IjkVideoView_enableBackground, false);
-            int pos = arr.getInt(R.styleable.IjkVideoView_aspectRatio, 0);
-            mCurrentAspectRatio = s_allAspectRatio[pos];
-            arr.recycle();
-        }
-        if (mEnableBackgroundPlay) {
-            mMediaPlayer = MediaPlayerService.getMediaPlayer();
-        }
         createRender();
     }
 
@@ -238,13 +225,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         return mEnableBackgroundPlay;
     }
 
-    public void enterBackground() {
-        MediaPlayerService.setMediaPlayer(mMediaPlayer);
-    }
-
-    public void stopBackgroundPlay() {
-        MediaPlayerService.setMediaPlayer(null);
-    }
 
     private static final int STATE_ERROR = -1;
     private static final int STATE_IDLE = 0;

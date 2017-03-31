@@ -22,11 +22,9 @@ public class MainActivity extends AppCompatActivity {
         IjkMediaPlayer.loadLibrariesOnce(null);
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
         videoView = (IjkVideoView) findViewById(R.id.ijkPlayer);
-        //  videoView.setBackgroundColor(Color.parseColor("#F6F6F6"));
-        //  videoView.setOnErrorListener(new ErrorListener());
         AndroidMediaController controller = new AndroidMediaController(this, false);
         videoView.setMediaController(controller);
-        String url = "https://wdl.wallstreetcn.com/%E5%85%A8%E7%90%83%E8%B4%A7%E5%B8%81%E4%B9%8B%E6%97%85%E7%BE%8E%E5%9B%BD%E4%B8%8B.mp3";
+        String url = "https://wdl.wallstreetcn.com/41aae4d2-390a-48ff-9230-ee865552e72d";
         // String url = "http://o6wf52jln.bkt.clouddn.com/演员.mp3";
         videoView.setVideoURI(Uri.parse(url));
         videoView.start();

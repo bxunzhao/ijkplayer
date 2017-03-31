@@ -35,8 +35,5 @@ public interface IMediaController {
 
     void show();
 
-    //----------
-    // Extends
-    //----------
     void showOnce(View view);
 }
