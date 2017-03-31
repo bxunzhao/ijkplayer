@@ -1,22 +1,20 @@
 # ijkplayer
 基于BiliBili开源播放器编译好的so包项目，可直接通过lib的方式进行引用。
 
-优化了下control的实现方式,从dialog替换成view的显示隐藏.增加播放器支持的播放类型,明显增加了so包大小.
-
 新版本支持了https，使用者可以考虑下提升一下代码。
 
 请注意优化.
+
+升级到版本0.7.8.1
 
 ## Usage
 Add this line to your `build.gradle` file under your module directory. 
 
 ```
-    compile 'com.github.leifzhang:IjkLib:0.3.1'
+    compile 'com.github.leifzhang:IjkLib:0.3.2'
 ```
 # 简介
 更新了一下ijk的版本号以及升级了一下so包.
-
-新版本支持了https，使用者可以考虑下提升一下代码。
 
 正常情况下可以考虑参考以下代码,可以简单的过滤项目的so包.
 
