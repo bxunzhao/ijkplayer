@@ -29,7 +29,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
 
 import java.lang.ref.WeakReference;
 import java.util.Map;
@@ -276,12 +275,4 @@ public class SurfaceRenderView extends SurfaceView implements IRenderView {
         event.setClassName(SurfaceRenderView.class.getName());
     }
 
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-    @Override
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        super.onInitializeAccessibilityNodeInfo(info);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            info.setClassName(SurfaceRenderView.class.getName());
-        }
-    }
 }

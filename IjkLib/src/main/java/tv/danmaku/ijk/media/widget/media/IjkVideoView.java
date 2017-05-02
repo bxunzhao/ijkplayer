@@ -6,7 +6,6 @@ import android.content.res.Resources;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.util.AttributeSet;
@@ -19,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.MediaController;
 
-import java.io.IOException;
 import java.util.Map;
 
 import tv.danmaku.ijk.media.player.IMediaPlayer;
@@ -49,7 +47,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         init(context, attrs);
     }
 
-    private boolean mEnableBackgroundPlay = false;
     private IRenderView.ISurfaceHolder mSurfaceHolder = null;
     protected IMediaPlayer mMediaPlayer = null;
     private IRenderView mRenderView;
@@ -61,7 +58,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
             IRenderView.AR_16_9_FIT_PARENT,
             IRenderView.AR_4_3_FIT_PARENT};
     private int mVideoRotationDegree;
-    private int mCurrentAspectRatio = s_allAspectRatio[0];
+    private int mCurrentAspectRatio = s_allAspectRatio[1];
     private int mSeekWhenPrepared = 0;
 
     private boolean mCanPause = true;
@@ -74,7 +71,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
 
     public IMediaPlayer createPlayer() {
         IjkMediaPlayer ijkMediaPlayer = new IjkMediaPlayer();
-        ijkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_DEBUG);
+        IjkMediaPlayer.native_setLogLevel(IjkMediaPlayer.IJK_LOG_DEBUG);
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec", 1);
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "mediacodec-auto-rotate", 1);
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "opensles", 1);
@@ -221,11 +218,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         return 0;
     }
 
-    public boolean isBackgroundPlayEnabled() {
-        return mEnableBackgroundPlay;
-    }
-
-
     private static final int STATE_ERROR = -1;
     private static final int STATE_IDLE = 0;
     private static final int STATE_PREPARING = 1;
@@ -269,24 +261,16 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
             mMediaPlayer.setOnInfoListener(mInfoListener);
             mMediaPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
             mCurrentBufferPercentage = 0;
-            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                mMediaPlayer.setDataSource(getContext(), mUri, mHeaders);
-            } else {
-                mMediaPlayer.setDataSource(mUri.toString());
-            }
+            mMediaPlayer.setDataSource(getContext(), mUri, mHeaders);
             bindSurfaceHolder(mMediaPlayer, mSurfaceHolder);
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
             mMediaPlayer.setScreenOnWhilePlaying(true);
             mMediaPlayer.prepareAsync();
             mCurrentState = STATE_PREPARING;
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             mCurrentState = STATE_ERROR;
             mTargetState = STATE_ERROR;
-            //    mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
-        } catch (IllegalArgumentException ex) {
-            mCurrentState = STATE_ERROR;
-            mTargetState = STATE_ERROR;
-            //    mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
+            mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
         }
     }
 
@@ -342,18 +326,14 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
                 //  Log.i(TAG, "onSurfaceChanged: unmatched render callback\n");
                 return;
             }
-
             mSurfaceWidth = w;
             mSurfaceHeight = h;
             //boolean isValidState = (mTargetState == STATE_PLAYING);
             boolean hasValidSize = !mRenderView.shouldWaitForResize() || (mVideoWidth == w && mVideoHeight == h);
-            if (mMediaPlayer != null
-                    // && isValidState
-                    && hasValidSize) {
+            if (mMediaPlayer != null && hasValidSize) {
                 if (mSeekWhenPrepared != 0) {
                     seekTo(mSeekWhenPrepared);
                 }
-                start();
             }
         }
 
@@ -429,9 +409,6 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     IMediaPlayer.OnPreparedListener mPreparedListener = new IMediaPlayer.OnPreparedListener() {
         public void onPrepared(IMediaPlayer mp) {
             mCurrentState = STATE_PREPARED;
-
-            // Get the capabilities of the player for this stream
-            // REMOVED: Metadata
             if (mMediaController != null) {
                 mMediaController.setEnabled(true);
             }

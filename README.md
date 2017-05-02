@@ -1,9 +1,7 @@
-# ijkplayer
+# ijkPlayer
 基于BiliBili开源播放器编译好的so包项目，可直接通过lib的方式进行引用。
 
-新版本支持了https，使用者可以考虑下提升一下代码。
-
-请注意优化.
+新版本支持了https,同时修复了横竖屏切换会改变播放状态的bug。
 
 升级到版本0.7.8.1
 
@@ -11,8 +9,9 @@
 Add this line to your `build.gradle` file under your module directory. 
 
 ```
-    compile 'com.github.leifzhang:IjkLib:0.4.0'
+    compile 'com.github.leifzhang:IjkLib:0.4.3'
 ```
+
 # 简介
 更新了一下ijk的版本号以及升级了一下so包.
 
@@ -26,5 +25,8 @@ Add this line to your `build.gradle` file under your module directory.
     }
 ```
 
-升级了ijkplayer的so包以及java代码，同时更好的对lib代码迁移，方便直接关联项目的方式引入。
-同时感谢bilibili大神们开源。
+升级了ijkPlayer的so包以及java代码，同时更好的对lib代码迁移，方便直接关联项目的方式引入。
+同时感谢BiliBili大神们开源。
+
+## License
+[MIT](https://opensource.org/licenses/MIT)

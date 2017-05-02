@@ -66,7 +66,6 @@ public final class MeasureHelper {
 
     /**
      * Must be called by View.onMeasure(int, int)
-     *
      * @param widthMeasureSpec
      * @param heightMeasureSpec
      */
