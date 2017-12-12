@@ -9,7 +9,7 @@
 Add this line to your `build.gradle` file under your module directory. 
 
 ```
-    compile 'com.github.leifzhang:IjkLib:0.4.3'
+    compile 'com.github.leifzhang:IjkLib:0.4.4'
 ```
 
 # 简介
