@@ -3,7 +3,7 @@
 
 新版本支持了https,同时修复了横竖屏切换会改变播放状态的bug。
 
-升级到版本0.7.8.1
+升级到版本0.8.4
 
 ## Usage
 Add this line to your `build.gradle` file under your module directory. 
