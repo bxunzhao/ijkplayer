@@ -87,7 +87,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     }
 
     public void createRender() {
-        SurfaceRenderView renderView = new SurfaceRenderView(getContext());
+        TextureRenderView renderView = new TextureRenderView(getContext());
         setRenderView(renderView);
     }
 
