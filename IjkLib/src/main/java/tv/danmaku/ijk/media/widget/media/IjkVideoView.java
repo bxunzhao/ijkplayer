@@ -739,4 +739,17 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     public IMediaPlayer getMediaPlayer() {
         return mMediaPlayer;
     }
+
+    public void setMediaPlayer(IjkMediaPlayer player) {
+        this.mMediaPlayer = player;
+        mMediaPlayer.setOnPreparedListener(mPreparedListener);
+        mMediaPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
+        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        mMediaPlayer.setOnErrorListener(mErrorListener);
+        mMediaPlayer.setOnInfoListener(mInfoListener);
+        mMediaPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
+        mCurrentState = !player.isPlaying() ? STATE_PAUSED : STATE_PLAYING;
+        attachMediaController();
+        bindSurfaceHolder(mMediaPlayer, mSurfaceHolder);
+    }
 }

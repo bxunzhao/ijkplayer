@@ -31,9 +31,13 @@ public class MainActivity extends AppCompatActivity {
         videoView = (IjkVideoView) findViewById(R.id.ijkPlayer);
         AndroidMediaController controller = new AndroidMediaController(this, false);
         videoView.setMediaController(controller);
-        String url = "https://wdl.wallstreetcn.com/41aae4d2-390a-48ff-9230-ee865552e72d";
-        // String url = "http://o6wf52jln.bkt.clouddn.com/演员.mp3";
-        videoView.setVideoURI(Uri.parse(url));
+        if (BaseVideoService.getMediaPlayer() != null) {
+            videoView.setMediaPlayer((IjkMediaPlayer) BaseVideoService.getMediaPlayer());
+        } else {
+            String url = "https://wdl.wallstreetcn.com/41aae4d2-390a-48ff-9230-ee865552e72d";
+            // String url = "http://o6wf52jln.bkt.clouddn.com/演员.mp3";
+            videoView.setVideoURI(Uri.parse(url));
+        }
         videoView.start();
     }
 
@@ -53,13 +57,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        videoView.pause();
+      //  videoView.pause();
     }
 
     @Override
     protected void onDestroy() {
+        BaseVideoService.setMediaPlayer(videoView.getMediaPlayer());
+        BaseVideoService.intentToStart(this);
         super.onDestroy();
-        IjkMediaPlayer.native_profileEnd();
     }
 
     @Override
