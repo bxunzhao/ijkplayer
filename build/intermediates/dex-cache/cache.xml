@@ -2,40 +2,164 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.0.aar/507ea7416bc0d570e769ab1efc508019/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
         optimize="true"
-        revision="25.0.2"
-        sha1="1b9d19356fc3e4afdb1048cae5ceb23d41bc326a">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d5d70d2b2852178a2f8bd822f93102d59691d604/classes.dex" />
+        revision="27.0.3"
+        sha1="fe6c8fbfeeb1454c3eb605c9b66662991681fd55">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/2.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.0/edf3f7bfb84a7521d0599efa3b0113a0ee90f85/common-1.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="15"
         optimize="true"
-        revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_007dbccea4c7be6c2c32b9693ebf4c3263960e4c/classes.dex" />
+        revision="27.0.3"
+        sha1="0edf3f7bfb84a7521d0599efa3b0113a0ee90f85">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/13.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/ijkplayer-java-0.8.8.aar/cbe968e3d7bc0dbb584308bffe4dd133/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
         optimize="true"
-        revision="25.0.0"
-        sha1="8331d9ff3d194f19568d23bfe98a8d1aefd26d07">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_d5d70d2b2852178a2f8bd822f93102d59691d604/classes.dex" />
+        revision="27.0.3"
+        sha1="7bda42289496a824fac790960a80810bc7411acb">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/9.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/Users/zhangyang/ijkplayer/sample/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/89a0e3e4f7bc08e46c215cee75b2a4e2/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
         optimize="true"
-        revision="25.0.0"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_007dbccea4c7be6c2c32b9693ebf4c3263960e4c/classes.dex" />
+        revision="27.0.3"
+        sha1="71d380aeac037e63bab7bda2ba211777e16a2f42">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/27.1.0/39ded76b5e1ce1c5b2688e1d25cdc20ecee32007/support-annotations-27.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="39ded76b5e1ce1c5b2688e1d25cdc20ecee32007">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.0.aar/65521fc639007acfb273d63a26894334/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="755c70a5a4e439030f67311dbafaa67b111377a6">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.0.aar/c6c419a552fd5a660d6e0493a6bd7f4c/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9a2ea9818b2f556b6663c0e7376bd664ee6c7550">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/c5f8426c63920a64a3cc17e14312279b/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5c66801c7ac6def4ffef7859925b12ce7940438e">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.0/8007981f7d7540d89cd18471b8e5dcd2b4f99167/common-1.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8007981f7d7540d89cd18471b8e5dcd2b4f99167">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/ijkplayer/IjkLib/build/intermediates/intermediate-jars/release/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fa937ce38b107703616556d53bb88a35dac997eb">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/16.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/f2a8de0d65c5528cc0ff42a1bc8547f6/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8a9fd7c97f1d13f97f3b52f9d2e54cd857d5acf9">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/10.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/5ea091342fc4e6183338bf29e40a80b2/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3d46095629eedbd5b79b4d129428fc499473a73b">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.0.aar/fbe1651346d0998551a65f2e119bd793/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="705378853cb9f264315d7a0a8edb6743d72efe9b">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.0.aar/1a4d4a01379d7bacb4e0f5fb03335fed/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6f209b73a488f358673f39317df394bd7a99c05e">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d5262f5e9875980984eb68d1f0b1f95a/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e2bbe48deed35056023eed2cdc0cc92e5c7d3617">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zhangyang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/4da85affab7d8891b8a05b87bdba186c/jars/classes.jar"
+        jumboMode="false"
+        min-sdk-version="15"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1fd3ceac7f415975323d52c6c6057db409a907f6">
+        <dex dex="/Users/zhangyang/ijkplayer/sample/build/intermediates/transforms/preDex/release/11.jar" />
     </item>
 
 </items>

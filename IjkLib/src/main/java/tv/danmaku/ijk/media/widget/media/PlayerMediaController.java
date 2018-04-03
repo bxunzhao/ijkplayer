@@ -45,8 +45,8 @@ public class PlayerMediaController extends FrameLayout {
     StringBuilder mFormatBuilder;
     Formatter mFormatter;
     protected ImageView mPauseButton;
-    protected static int IC_MEDIA_PAUSE_ID = Resources.getSystem().getIdentifier("ic_media_pause", "drawable", "android");
-    protected static int IC_MEDIA_PLAY_ID = Resources.getSystem().getIdentifier("ic_media_play", "drawable", "android");
+    protected int IC_MEDIA_PAUSE_ID = Resources.getSystem().getIdentifier("ic_media_pause", "drawable", "android");
+    protected int IC_MEDIA_PLAY_ID = Resources.getSystem().getIdentifier("ic_media_play", "drawable", "android");
 
 
     public PlayerMediaController(Context context, AttributeSet attrs) {
