@@ -7,7 +7,6 @@ version = PROJ_VERSION
 group = PROJ_GROUP // Maven Group ID for the artifact，一般填你唯一的包名
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
     resourcePrefix "ijkLib__"
     defaultConfig {
         minSdkVersion 15
@@ -23,9 +22,9 @@ android {
     }
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
-    provided 'com.android.support:appcompat-v7:27.1.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+    compileOnly 'com.android.support:appcompat-v7:27.1.1'
 }
 
 def siteUrl = 'https://github.com/Leifzhang/ijkplayer' // 项目的主页
