@@ -84,7 +84,6 @@ public class PlayerMediaController extends FrameLayout {
     }
 
 
-
     // Update the dynamic parts of mDecorLayoutParams
     // Must be called with mAnchor != NULL.
     private void updateFloatingWindowLayout() {
@@ -320,10 +319,10 @@ public class PlayerMediaController extends FrameLayout {
         if (mProgress != null) {
             if (duration > 0) {
                 // use long to avoid overflow
-                long pos = 1000L * position / duration;
+                long pos = (long) Math.ceil(1000.0F * position / duration);
                 mProgress.setProgress((int) pos);
             }
-            int percent = mPlayer.getBufferPercentage();
+            int percent = mPlayer.getBufferPercentage() + 1;
             mProgress.setSecondaryProgress(percent * 10);
         }
 
