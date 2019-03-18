@@ -41,7 +41,6 @@ public class PlayerMediaController extends FrameLayout {
     private static final int SHOW_PROGRESS = 2;
     private static final int PROGRESS = 3;
     private final boolean mUseFastForward;
-    private boolean mFromXml;
     StringBuilder mFormatBuilder;
     Formatter mFormatter;
     protected ImageView mPauseButton;
@@ -54,7 +53,6 @@ public class PlayerMediaController extends FrameLayout {
         mRoot = this;
         mContext = context;
         mUseFastForward = true;
-        mFromXml = true;
     }
 
     @Override
@@ -316,6 +314,8 @@ public class PlayerMediaController extends FrameLayout {
         }
         int position = mPlayer.getCurrentPosition();
         int duration = mPlayer.getDuration();
+        Log.i("setProgress", "position:" + position);
+        Log.i("setProgress", "duration:" + duration);
         if (mProgress != null) {
             if (duration > 0) {
                 // use long to avoid overflow
@@ -323,6 +323,7 @@ public class PlayerMediaController extends FrameLayout {
                 mProgress.setProgress((int) pos);
             }
             int percent = mPlayer.getBufferPercentage() + 1;
+            Log.i("setProgress", "percent:" + percent);
             mProgress.setSecondaryProgress(percent * 10);
         }
 
