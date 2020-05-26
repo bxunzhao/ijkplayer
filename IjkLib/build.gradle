@@ -1,10 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
-// This is the library version used when deploying the artifact
-version = PROJ_VERSION
-group = PROJ_GROUP // Maven Group ID for the artifact，一般填你唯一的包名
 android {
     compileSdkVersion 28
     resourcePrefix "ijkLib__"
@@ -24,11 +19,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
-    compileOnly 'com.android.support:appcompat-v7:28.0.0'
+    compileOnly 'androidx.appcompat:appcompat:1.0.0'
 }
 
-def siteUrl = 'https://github.com/Leifzhang/ijkplayer' // 项目的主页
-def gitUrl = 'https://github.com/Leifzhang/ijkplayer.git' // Git仓库的url
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+// This is the library version used when deploying the artifact
+version = PROJ_VERSION
+group = PROJ_GROUP // Maven Group ID for the artifact，一般填你唯一的包名
+def siteUrl = 'https://github.com/bxunzhao/ijkplayer' // 项目的主页
+def gitUrl = 'https://github.com/bxunzhao/ijkplayer.git' // Git仓库的url
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -47,9 +48,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'LeifZhang'    //填写的一些基本信息
+                        id 'bxunzhao'    //填写的一些基本信息
                         name 'IjkPlayer'
-                        email 'leifzhanggithub@gmail.com'
+                        email 'bxunzhao@sina.com'
                     }
                 }
                 scm {
@@ -62,14 +63,14 @@ install {
 }
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
+    archiveClassifier = 'sources'
 }
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
 task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 artifacts {
@@ -83,7 +84,7 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "maven"
+        repo = "IjkplayerLib"
         name = "IjkplayerLib"    //发布到JCenter上的项目名字
         userOrg = user
         websiteUrl = siteUrl

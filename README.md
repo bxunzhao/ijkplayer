@@ -12,7 +12,7 @@ Add this line to your `build.gradle` file under your module directory.
     compile 'com.github.leifzhang:IjkLib:0.4.11'
 ```
 
-# 简介
+## 简介
 更新了一下ijk的版本号以及升级了一下so包.
 
 正常情况下可以考虑参考以下代码,可以简单的过滤项目的so包.
