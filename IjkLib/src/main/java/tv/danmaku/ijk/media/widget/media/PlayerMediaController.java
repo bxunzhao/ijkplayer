@@ -517,4 +517,10 @@ public class PlayerMediaController extends FrameLayout {
     public void setDefaultTimeout(int sDefaultTimeout) {
         this.sDefaultTimeout = sDefaultTimeout;
     }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        mHandler.removeCallbacksAndMessages(null);
+    }
 }
