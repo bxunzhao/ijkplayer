@@ -401,10 +401,10 @@ public class PlayerMediaController extends FrameLayout {
                 ((Activity) getContext()).finish();
                 return true;
             }
-            if (isShowing()) {
-                hide();
-                return true;
-            }
+//            if (isShowing()) {
+//                hide();
+//                return true;
+//            }
         }
         return super.dispatchKeyEvent(event);
     }
